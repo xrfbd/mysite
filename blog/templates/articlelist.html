@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block title %}帖子列表{% endblock %}
+{% block css %}
+
+{% endblock %}
+{% block content %}
+
+    <style type="text/css"></style>
+>>>>帖子列表</br></br>
+<table class="table">
+    <thead>
+    <tr>
+    <th>标题</th>
+    <th>正文</th>
+    <th>标签</th>
+    <th>创建日期</th>
+    <th>点赞人数</th>
+    <th>阅读量</th>
+    </tr>
+    </thead>
+    {% for art in arts %}
+        <tbody>
+        <tr>
+        <td>{{ art.title }}</td>
+        <td>{{ art.content }}</td>
+        <td>{% for label in art.labels.all %}
+            {{ label.label }}
+            {% endfor %}
+
+        </td>
+        <td>{{ art.date }}</td>
+        <td>{{ art.like }}</td>
+        <td>{{ art.reading }}</td>
+        </tr>
+        </tbody>
+    {% endfor %}
+
+</table>
+
+</form>
+{% endblock %}
