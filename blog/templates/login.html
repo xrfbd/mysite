@@ -7,11 +7,96 @@
 	<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
+<style type="text/css">
+    #id_username{width: 100%;
+        border:1px solid #ccc;
+        border-radius:4px;
+        padding:6px 12px;
+
+    }
+    #id_password{width: 100%;
+        border:1px solid #ccc;
+        border-radius:4px;
+        padding:6px 12px;
+
+    }
+    #Button_login{
+        border:1px solid #ccc;
+        border-radius:4px;
+        padding:6px 12px;
+
+
+    }
+    .login_b{
+        align:center;
+        overflow:hidden;
+        height:350px;
+        width:650px;
+        margin:0 auto;
+        background-color:#FFFFFF;
+        padding: 25px;
+
+        font-weight:700;
+        color:#333;
+        font-size:14px;
+        font-family:-apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    }
+</style>
+<!--
 <form method="post">
     {% csrf_token %}
     {{ form.as_ul }}
     <input type="submit" value="登陆">
 </form>
 {{ error }}
+-->
+<form action="" method="post" style="background-color:#000000;padding: 40px 0;margin: 150px 0">
+            {% csrf_token %}
+	        <div class="login_b"  style="">
+	            <table style="width:500px; height: 220px; margin-left: 60px; margin-top: 55px; cellspacing='1'; cellpadding='10'">
+                    <tr>
+                        <td class="table-td" style="font-family: Verdana,Microsoft YaHei ,宋体; font-size:20px;text-align: center">登录界面<span style="color: green;"> </span>
+                        </td>
+                        <td class="table-td">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="table-td">
+                            <label for="id_name" style="font-family: Verdana,Microsoft YaHei ,宋体;">用户名</label><br>
+                            {{ form.username }}
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td class="table-td">
+                            <label for="id_password"  style="font-family: Verdana,Microsoft YaHei ,宋体;">密码</label><br>
+                            {{ form.password }}
+                        </td>
+
+
+                    </tr>
+                    <tr>
+                        <td class="table-td" style="font-size: 14px;font-family: Verdana,Microsoft YaHei ,宋体;">
+                            {{ form.isautologin }}&nbsp;自动登录
+                        </td>
+                        <td class="table-td">
+                        </td>
+
+                    </tr>
+                    <tr>
+
+                         <td class="table-td"><br>
+                            <input id="Button_login" type="submit" value="登  录"
+                                style="color: #000000;  font-weight:bolder; cursor:pointer;"/>&nbsp;&nbsp;
+                        </td>
+
+
+                        <td class="table-td">
+                        </td>
+                    </tr>
+                </table>
+
+        </form>
+
 </body>
 </html>
