@@ -3,6 +3,7 @@ from django import forms
 from django.forms import widgets
 from models import Article,Label
 from django.contrib.auth.models import User
+from django.contrib import auth
 
 class NewArticleForm(forms.Form):
     title = forms.CharField(max_length=10,required=True,error_messages={'required': u'必选项1'})
@@ -47,6 +48,7 @@ class LoginForm(forms.Form):
             raise forms.ValidationError(u'该账号不存在')
 
         #验证用户名、密码
-        is_user = User.objects.filter(username=username,password=password).exists()
+        is_user = auth.authenticate(username=username,password=password)
         if not is_user:
             raise forms.ValidationError(u'用户名、密码有误')
+
